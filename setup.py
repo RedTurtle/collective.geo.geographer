@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.7'
+version = '1.7reggio'
 install_requires = [
     'setuptools',
     'Products.CMFCore',
