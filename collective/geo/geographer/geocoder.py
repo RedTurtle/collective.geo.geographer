@@ -3,7 +3,8 @@ try:
 except ImportError:
     import simplejson as json
 from geopy import geocoders
-from geopy.geocoders.google import GQueryError
+# from geopy.geocoders.google import GQueryError
+from geopy.exc import GeocoderQueryError
 
 from zope.interface import implements
 from zope.component import getUtility
@@ -28,7 +29,7 @@ class GeoCoderUtility(object):
         self.geocoder = geocoders.Nominatim()
 
         if not address:
-            raise GQueryError
+            raise GeocoderQueryError
         return self.geocoder.geocode(address, exactly_one=False)
 
 
